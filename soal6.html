@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="search-container">
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Search">
+            <button type="submit">Submit</button>
+        </form>
+        <div id="resultText"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #6b8bdd;
+}
+
+.search-container {
+    text-align: center;
+}
+
+#searchInput {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#resultText {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+</style>
+
+<script>
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Mencegah form dari reload halaman
+        
+        var resultText = document.getElementById('resultText');
+        var searchText = document.getElementById('searchInput').value;
+
+        // Menampilkan teks "Mencari data..."
+        resultText.textContent = "Mencari data...";
+
+        // Simulasi delay seperti mengakses server
+        setTimeout(function() {
+            // Menampilkan nama yang dicari
+            resultText.textContent = "Hai, nama saya  " + searchText;
+        }, 2000); // Delay 2 detik
+    });
+</script>
